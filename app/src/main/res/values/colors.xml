@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#00060d</color>
+    <color name="colorPrimaryDark">#00060d</color>
+    <color name="colorAccent">#fff</color>
+
+
+    <color name="white">#fff</color>
+    <color name="top_list_sokhanrani">#002040</color>
+    <color name="text_color_blue">#001a34</color>
+
+    <color name="orange">#ff2f00</color>
+
+</resources>
