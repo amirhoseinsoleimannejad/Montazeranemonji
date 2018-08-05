@@ -40,8 +40,8 @@
                 android:id="@+id/imageView5"
                 android:layout_width="60dp"
                 android:layout_height="60dp"
-                android:layout_marginLeft="220dp"
-             android:layout_gravity="center"
+                android:layout_gravity="center"
+                android:layout_marginLeft="170dp"
                 app:srcCompat="@drawable/l11" />
 
 
@@ -102,6 +102,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:layout_marginBottom="30dp"
             android:orientation="vertical">
 
             <android.support.v4.view.ViewPager
@@ -116,4 +117,13 @@
 
 
     </LinearLayout>
+
+
+    <ImageView
+        android:id="@+id/img_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:scaleType="fitXY"
+        android:layout_alignParentBottom="true"
+        app:srcCompat="@drawable/q11" />
 </RelativeLayout>

@@ -26,85 +26,62 @@ public class MainActivity extends AppCompatActivity {
 
 
         G.activity=this;
+
+        if(!G.checknet()){
+            Intent i = new Intent(G.activity, ErrorActivity.class);
+
+            startActivity(i);
+
+        }
+        else {
             TabLayout tabLayout = (TabLayout) findViewById(R.id.tab_layout);
 
 
+            ImageView about_us = (ImageView) findViewById(R.id.about_us);
+            about_us.setOnClickListener(new View.OnClickListener() {
 
-        ImageView about_us=(ImageView)findViewById(R.id.about_us);
-        about_us.setOnClickListener(new View.OnClickListener() {
-
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(G.activity,AboutusActivity.class);
-                startActivity(i);
-            }
-        });
-
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent(G.activity, AboutusActivity.class);
+                    startActivity(i);
+                }
+            });
 
 
-        mydb = new DBHelper(this);
+            mydb = new DBHelper(this);
 
-        View tabView1= LayoutInflater.from(this).inflate(R.layout.custom_tab,null);
-        View tabView2= LayoutInflater.from(this).inflate(R.layout.custom_tab,null);
-        View tabView3= LayoutInflater.from(this).inflate(R.layout.custom_tab,null);
+            View tabView1 = LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+            View tabView2 = LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
+            View tabView3 = LayoutInflater.from(this).inflate(R.layout.custom_tab, null);
 
-        TextView text=(TextView) tabView1.findViewById(R.id.text);
-        ImageView icon=(ImageView) tabView1.findViewById(R.id.icon);
-
-
-
-        TextView text3=(TextView) tabView3.findViewById(R.id.text);
-        ImageView icon3=(ImageView) tabView3.findViewById(R.id.icon);
-
-        Typeface font3 = Typeface.createFromAsset(getAssets(), "fonts/IRANSansWeb(FaNum)_UltraLight.ttf");
-        text3.setTypeface(font3);
-        text3.setText("مجموعه ها");
-        icon3.setBackgroundResource(R.drawable.ic_group_svg);
-        tabLayout.addTab(tabLayout.newTab().setCustomView(tabView3));
+            TextView text = (TextView) tabView1.findViewById(R.id.text);
+            ImageView icon = (ImageView) tabView1.findViewById(R.id.icon);
 
 
+            TextView text3 = (TextView) tabView3.findViewById(R.id.text);
+            ImageView icon3 = (ImageView) tabView3.findViewById(R.id.icon);
+
+            Typeface font3 = Typeface.createFromAsset(getAssets(), "B Nazanin Bold_p30download.com.ttf");
+            text3.setTypeface(font3);
+            text3.setText("مجموعه ها");
+            icon3.setBackgroundResource(R.drawable.ic_four_black_squares);
+            tabLayout.addTab(tabLayout.newTab().setCustomView(tabView3));
 
 
-        TextView text2=(TextView) tabView2.findViewById(R.id.text);
-        ImageView icon2=(ImageView) tabView2.findViewById(R.id.icon);
-        Typeface font2 = Typeface.createFromAsset(getAssets(), "fonts/IRANSansWeb(FaNum)_UltraLight.ttf");
-        text2.setTypeface(font2);
-        text2.setText("اخیراً");
-        icon2.setBackgroundResource(R.drawable.icon_recently);
-        tabLayout.addTab(tabLayout.newTab().setCustomView(tabView2));
+            TextView text2 = (TextView) tabView2.findViewById(R.id.text);
+            ImageView icon2 = (ImageView) tabView2.findViewById(R.id.icon);
+            Typeface font2 = Typeface.createFromAsset(getAssets(), "B Nazanin Bold_p30download.com.ttf");
+            text2.setTypeface(font2);
+            text2.setText("اخیراً");
+            icon2.setBackgroundResource(R.drawable.ic_recently);
+            tabLayout.addTab(tabLayout.newTab().setCustomView(tabView2));
 
 
-
-
-        Typeface font = Typeface.createFromAsset(getAssets(), "fonts/IRANSansWeb(FaNum)_UltraLight.ttf");
-        text.setTypeface(font);
-        text.setText("نشانه ها");
-        icon.setBackgroundResource(R.drawable.ic_location);
-        tabLayout.addTab(tabLayout.newTab().setCustomView(tabView1));
-
-
-
-
-
-
-
-
-
-
-
-
-
-//            for (int i = 0; i < tabLayout.getTabCount(); i++) {
-//                //noinspection ConstantConditions
-//                TextView tv=(TextView) LayoutInflater.from(this).inflate(R.layout.custom_tab,null);
-//
-//                Typeface font = Typeface.createFromAsset(getAssets(), "fonts/IRANSansWeb(FaNum)_UltraLight.ttf");
-//                tv.setTypeface(font);
-//                tabLayout.getTabAt(i).setCustomView(tv);
-//
-//            }
-
-
+            Typeface font = Typeface.createFromAsset(getAssets(), "B Nazanin Bold_p30download.com.ttf");
+            text.setTypeface(font);
+            text.setText("نشانه ها");
+            icon.setBackgroundResource(R.drawable.ic_location);
+            tabLayout.addTab(tabLayout.newTab().setCustomView(tabView1));
 
 
             tabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
@@ -131,6 +108,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
 
+        }
 
     }
 }

@@ -20,7 +20,6 @@ import com.example.amhso.montazeranemonji.otherclass.G;
 import com.example.amhso.montazeranemonji.otherclass.Item;
 import com.example.amhso.montazeranemonji.otherclass.ItemAdapter;
 
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 
@@ -82,7 +81,7 @@ public class TabFragment1 extends Fragment {
         }
 
 
-        StringRequest strReq = new StringRequest(Request.Method.GET,G.urlcategory,
+        StringRequest strReq = new StringRequest(Request.Method.GET, G.urlcategory,
                 new Response.Listener<String>() {
 
                     @Override

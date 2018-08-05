@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-
 import com.example.amhso.montazeranemonji.PlayerActivity;
 import com.example.amhso.montazeranemonji.R;
 

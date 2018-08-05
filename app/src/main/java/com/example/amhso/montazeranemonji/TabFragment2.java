@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
-
 import com.example.amhso.montazeranemonji.otherclass.DBHelper;
 import com.example.amhso.montazeranemonji.otherclass.G;
 import com.example.amhso.montazeranemonji.otherclass.PlayerAdapter;

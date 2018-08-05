@@ -4,6 +4,8 @@ package com.example.amhso.montazeranemonji.otherclass;
 import android.app.Activity;
 import android.app.Application;
 import android.content.Context;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.text.TextUtils;
 
 import com.android.volley.Request;
@@ -39,27 +41,6 @@ public class G extends Application {
 
 
     public static Boolean first_start=true;
-
-
-
-
-
-//    public static final String CheckLoginUrl= G.urlserver+"auth";
-//    public static final String FetchlistCity= G.urlserver+"fetchlistcity";
-//    public static final String FetchlistOstan= G.urlserver+"fetchlistostan";
-//    public static final String FetchlistShahrestan= G.urlserver+"fetchlistshahrestan";
-//    public static final String FetchlistPart= G.urlserver+"fetchlistpart";
-//    public static final String FetchlistDoctor= G.urlserver+"fetchlistdoctor";
-//    public static final String FetchlistTurn= G.urlserver+"fetchlistturn";
-//    public static final String FetchlistDoctorAll= G.urlserver+"fetchlistdoctorall";
-//
-//    public static final String Turn= G.urlserver+"turn";
-//    public static final String FetchListMmpi= G.urlserver+"fetchlistmmpi";
-//    public static final String FetchListVisit= G.urlserver+"fetchlistvisit";
-//    public static final String FetchListVisitMmpi= G.urlserver+"fetchlistvisitmmpi";
-//    public static final String FetchListExpertise= G.urlserver+"fetchlistexpertise";
-
-
 
 
 
@@ -130,4 +111,22 @@ public class G extends Application {
     }
 
 
+
+
+    public static boolean checknet() {
+        ConnectivityManager conMgr;
+        conMgr = (ConnectivityManager) G.activity.getSystemService(Context.CONNECTIVITY_SERVICE);
+
+        if (conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.CONNECTED
+                || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.CONNECTED) {
+
+            return   true;
+
+        } else if (conMgr.getNetworkInfo(ConnectivityManager.TYPE_MOBILE).getState() == NetworkInfo.State.DISCONNECTED
+                || conMgr.getNetworkInfo(ConnectivityManager.TYPE_WIFI).getState() == NetworkInfo.State.DISCONNECTED) {
+
+            return false;
+        }
+        return false;
+    }
 }

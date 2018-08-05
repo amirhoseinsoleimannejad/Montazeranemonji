@@ -11,7 +11,6 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-
 import com.example.amhso.montazeranemonji.R;
 import com.example.amhso.montazeranemonji.list_sokanrani;
 import com.squareup.picasso.Picasso;

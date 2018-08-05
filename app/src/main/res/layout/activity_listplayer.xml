@@ -29,10 +29,11 @@
     <ImageView
         android:id="@+id/icon_movie"
         android:layout_alignParentLeft="true"
-        android:layout_width="30dp"
-        android:src="@drawable/ic_movie"
+        android:layout_width="40dp"
+        android:src="@drawable/ic_player"
         android:scaleType="fitXY"
-        android:layout_height="30dp" />
+        android:layout_height="40dp"
+        android:layout_marginLeft="30dp"/>
 
 
 
